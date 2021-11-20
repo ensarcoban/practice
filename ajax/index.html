@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <title>Ajax 1 - Text File</title>
+</head>
+<body>
+    <button id="button">Get Text File</button>
+
+    <a class="myLink">Add Content</a>
+
+    <ul class="list-group">
+        <li class="list-group-item" id="1">Cras justo odio</li>
+        <li class="list-group-item" id="2">Dapibus ac facilisis in</li>
+        <li class="list-group-item" id="3">Morbi leo risus</li>
+        <li class="list-group-item" id="4">Porta ac consectetur ac</li>
+        <li class="list-group-item" id="5">Vestibulum at eros</li>
+    </ul>
+    <div id="buttons">
+        <button class="adder">Buton</button>
+    </div>
+      <script>
+        $('#exampleModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+        // $('#exampleModal').on('shown.bs.modal', function () {
+        //     $('#myInput').trigger('focus')
+        // })
+
+        // document.getElementById('button').addEventListener('click', loadText);
+        // function loadText() {
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'sample.txt', true);
+        //     // xhr.onload = function() {
+        //     //     if (this.status == 200) {
+        //     //         console.log(this.responseText);
+        //     //     }
+        //     // };
+
+        //     xhr.onreadystatechange = function() {
+        //         if(this.readyState == 4 && this.status == 200) {
+        //             console.log(this.responseText);
+        //         }
+        //     }
+
+        //     xhr.send();
+        // }ü
+        $(document).on('click', '.myLink', function(event) {
+            $("body").append("<h1>selam</h1>") 
+        })
+        $('.list-group-item').click(function() {
+            console.log($(this).attr('id'));
+            console.log($(`#${$(this).attr('id')}`).html());
+            
+        })
+
+        $(document).ready(function() {
+            $('#buttons').on('click', '.adder', function() {
+                console.log(this);
+                $('#buttons').append('<button class="adder">Buton</button>')
+            })
+            $('#buttons').on({
+                mouseenter: function() {
+                    $('#buttons').append('<button class="adder">Buton</button>')
+                },
+                mouseleave: function() {
+                    $('#buttons').append('<button class="adder">Buton</button>')
+                }
+            })
+        })
+        
+    </script>
+</body>
+</html>
